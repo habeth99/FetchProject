@@ -14,6 +14,7 @@
 		E2E214622CB19C0C00D466AA /* FetchProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E214612CB19C0C00D466AA /* FetchProjectTests.swift */; };
 		E2E2146C2CB19C0C00D466AA /* FetchProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2146B2CB19C0C00D466AA /* FetchProjectUITests.swift */; };
 		E2E2146E2CB19C0C00D466AA /* FetchProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2146D2CB19C0C00D466AA /* FetchProjectUITestsLaunchTests.swift */; };
+		E2E2147B2CB19C5600D466AA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2147A2CB19C5600D466AA /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		E2E214672CB19C0C00D466AA /* FetchProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E2146B2CB19C0C00D466AA /* FetchProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProjectUITests.swift; sourceTree = "<group>"; };
 		E2E2146D2CB19C0C00D466AA /* FetchProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E2E2147A2CB19C5600D466AA /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				E2E214532CB19C0C00D466AA /* Assets.xcassets */,
 				E2E214552CB19C0C00D466AA /* FetchProject.entitlements */,
 				E2E214562CB19C0C00D466AA /* Preview Content */,
+				E2E2147A2CB19C5600D466AA /* Recipe.swift */,
 			);
 			path = FetchProject;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E2147B2CB19C5600D466AA /* Recipe.swift in Sources */,
 				E2E214522CB19C0900D466AA /* ContentView.swift in Sources */,
 				E2E214502CB19C0900D466AA /* FetchProjectApp.swift in Sources */,
 			);
