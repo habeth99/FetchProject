@@ -15,6 +15,8 @@
 		E2E2146C2CB19C0C00D466AA /* FetchProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2146B2CB19C0C00D466AA /* FetchProjectUITests.swift */; };
 		E2E2146E2CB19C0C00D466AA /* FetchProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2146D2CB19C0C00D466AA /* FetchProjectUITestsLaunchTests.swift */; };
 		E2E2147B2CB19C5600D466AA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2147A2CB19C5600D466AA /* Recipe.swift */; };
+		E2E2147D2CB2F17E00D466AA /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2147C2CB2F17E00D466AA /* RecipeViewModel.swift */; };
+		E2E214822CB3061400D466AA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E2E214812CB3061400D466AA /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 		E2E2146B2CB19C0C00D466AA /* FetchProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProjectUITests.swift; sourceTree = "<group>"; };
 		E2E2146D2CB19C0C00D466AA /* FetchProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E2E2147A2CB19C5600D466AA /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		E2E2147C2CB2F17E00D466AA /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E214822CB3061400D466AA /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +107,7 @@
 				E2E214552CB19C0C00D466AA /* FetchProject.entitlements */,
 				E2E214562CB19C0C00D466AA /* Preview Content */,
 				E2E2147A2CB19C5600D466AA /* Recipe.swift */,
+				E2E2147C2CB2F17E00D466AA /* RecipeViewModel.swift */,
 			);
 			path = FetchProject;
 			sourceTree = "<group>";
@@ -148,6 +153,9 @@
 			dependencies = (
 			);
 			name = FetchProject;
+			packageProductDependencies = (
+				E2E214812CB3061400D466AA /* Kingfisher */,
+			);
 			productName = FetchProject;
 			productReference = E2E2144C2CB19C0900D466AA /* FetchProject.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +228,9 @@
 				Base,
 			);
 			mainGroup = E2E214432CB19C0900D466AA;
+			packageReferences = (
+				E2E214802CB3061400D466AA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = E2E2144D2CB19C0900D466AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E2147D2CB2F17E00D466AA /* RecipeViewModel.swift in Sources */,
 				E2E2147B2CB19C5600D466AA /* Recipe.swift in Sources */,
 				E2E214522CB19C0900D466AA /* ContentView.swift in Sources */,
 				E2E214502CB19C0900D466AA /* FetchProjectApp.swift in Sources */,
@@ -621,6 +633,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E2E214802CB3061400D466AA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E2E214812CB3061400D466AA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2E214802CB3061400D466AA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E2E214442CB19C0900D466AA /* Project object */;
 }

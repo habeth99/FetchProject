@@ -8,20 +8,33 @@
 import Foundation
 import SwiftUI
 
-class Recipe: ObservableObject {
-    @Published var cuisine: String
-    @Published var name: String
-    @Published var photoUrlLarge: URL
-    @Published var photoUrlSmall: URL
-    @Published var uuid: UUID
-    @Published var youtube_Url: URL
+struct Recipe: Identifiable, Codable, Equatable {
+    let id: UUID
+    let name: String
+    let cuisine: String
+    let photoUrlLarge: URL
+    let photoUrlSmall: URL
+    let sourceUrl: URL?
+    let youtubeUrl: URL?
     
-    init(cuisine: String, name: String, photoUrlLarge: URL, photoUrlSmall: URL, uuid: UUID, youtube_Url: URL) {
-        self.cuisine = cuisine
-        self.name = name
-        self.photoUrlLarge = photoUrlLarge
-        self.photoUrlSmall = photoUrlSmall
-        self.uuid = uuid
-        self.youtube_Url = youtube_Url
+    enum CodingKeys: String, CodingKey {
+        case id = "uuid"
+        case name, cuisine
+        case photoUrlLarge = "photo_url_large"
+        case photoUrlSmall = "photo_url_small"
+        case sourceUrl = "source_url"
+        case youtubeUrl = "youtube_url"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        cuisine = try container.decode(String.self, forKey: .cuisine)
+        photoUrlLarge = try container.decode(URL.self, forKey: .photoUrlLarge)
+        photoUrlSmall = try container.decode(URL.self, forKey: .photoUrlSmall)
+        sourceUrl = try container.decodeIfPresent(URL.self, forKey: .sourceUrl)
+        youtubeUrl = try container.decodeIfPresent(URL.self, forKey: .youtubeUrl)
+        //youtubeUrl = try container.decode(URL.self, forKey: .youtubeUrl)
     }
 }
