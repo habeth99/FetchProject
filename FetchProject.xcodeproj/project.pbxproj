@@ -17,6 +17,8 @@
 		E2E2147B2CB19C5600D466AA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2147A2CB19C5600D466AA /* Recipe.swift */; };
 		E2E2147D2CB2F17E00D466AA /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2147C2CB2F17E00D466AA /* RecipeViewModel.swift */; };
 		E2E214822CB3061400D466AA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E2E214812CB3061400D466AA /* Kingfisher */; };
+		E2E214842CB3561500D466AA /* RecipeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E214832CB3561500D466AA /* RecipeViewModelTests.swift */; };
+		E2E214942CB40F6E00D466AA /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E214932CB40F6D00D466AA /* NetworkingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,9 @@
 		E2E2146D2CB19C0C00D466AA /* FetchProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E2E2147A2CB19C5600D466AA /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		E2E2147C2CB2F17E00D466AA /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		E2E214832CB3561500D466AA /* RecipeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModelTests.swift; sourceTree = "<group>"; };
+		E2E214852CB3760000D466AA /* FetchProject.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FetchProject.xctestplan; sourceTree = "<group>"; };
+		E2E214932CB40F6D00D466AA /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		E2E214432CB19C0900D466AA = {
 			isa = PBXGroup;
 			children = (
+				E2E214852CB3760000D466AA /* FetchProject.xctestplan */,
 				E2E2144E2CB19C0900D466AA /* FetchProject */,
 				E2E214602CB19C0C00D466AA /* FetchProjectTests */,
 				E2E2146A2CB19C0C00D466AA /* FetchProjectUITests */,
@@ -108,6 +114,7 @@
 				E2E214562CB19C0C00D466AA /* Preview Content */,
 				E2E2147A2CB19C5600D466AA /* Recipe.swift */,
 				E2E2147C2CB2F17E00D466AA /* RecipeViewModel.swift */,
+				E2E214932CB40F6D00D466AA /* NetworkingService.swift */,
 			);
 			path = FetchProject;
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				E2E214612CB19C0C00D466AA /* FetchProjectTests.swift */,
+				E2E214832CB3561500D466AA /* RecipeViewModelTests.swift */,
 			);
 			path = FetchProjectTests;
 			sourceTree = "<group>";
@@ -273,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E214942CB40F6E00D466AA /* NetworkingService.swift in Sources */,
 				E2E2147D2CB2F17E00D466AA /* RecipeViewModel.swift in Sources */,
 				E2E2147B2CB19C5600D466AA /* Recipe.swift in Sources */,
 				E2E214522CB19C0900D466AA /* ContentView.swift in Sources */,
@@ -284,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E214842CB3561500D466AA /* RecipeViewModelTests.swift in Sources */,
 				E2E214622CB19C0C00D466AA /* FetchProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

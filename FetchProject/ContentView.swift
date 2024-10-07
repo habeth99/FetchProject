@@ -12,143 +12,59 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: RecipeViewModel
     
     var body: some View {
-        VStack {
-            Text("Recipe's")
-                .font(.title)
-                .fontWeight(.semibold)
-            if let error = viewModel.error {
-                //Spacer()
-                List {
-                    HStack {
+        NavigationView {
+            ScrollView {
+                if let error = viewModel.error {
+                    VStack {
+                        Text(error)
+                            .font(.title3)
+                            .padding()
+                        Text("pull to refresh")
+                            .padding()
+                    }
+                } else if (viewModel.recipes.isEmpty){
+                    VStack {
                         Spacer()
-                        Text("Error fetching recipe's")
+                        Text("No recipe's available")
+                            .font(.title3)
+                            .padding()
                         Spacer()
                     }
-                    .listRowBackground(Color.clear)
                 }
-                .refreshable {
-                    viewModel.fetchRecipes()
-                }
-                //Text(error)
-                    //.padding()
-                //Text("Error fetching recipe's")
-                //Spacer()
-            } else if (viewModel.recipes.isEmpty) {
-                Spacer()
-                Text("No Recipe's available")
-                    .font(.title)
-                Spacer()
-            }
-            else {
-                List(viewModel.recipes) { recipe in
-                    HStack {
-                        KFImage(recipe.photoUrlSmall)
-                            .resizable()
-                            .placeholder {
-                                ProgressView()
+                LazyVStack(alignment: .leading) {
+                    ForEach(viewModel.recipes) { recipe in
+                        HStack {
+                            KFImage(recipe.photoUrlSmall)
+                                .resizable()
+                                .placeholder {
+                                    ProgressView()
+                                }
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(8)
+                            
+                            VStack(alignment: .leading) {
+                                Text(recipe.name)
+                                    .font(.headline)
+                                Text(recipe.cuisine)
+                                    .font(.subheadline)
                             }
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(8)
-                        
-                        VStack(alignment: .leading) {
-                            Text(recipe.name)
-                                .font(.headline)
-                            Text(recipe.cuisine)
-                                .font(.subheadline)
+                            Spacer()
+                            
+                            Button(action: {
+                                viewModel.toggleFavorite(for: recipe)
+                            }) {
+                                Image(systemName: viewModel.isFavorite(recipe) ? "star.fill" : "star")
+                                    .foregroundColor(viewModel.isFavorite(recipe) ? .yellow : .gray)
+                            }
                         }
+                        .padding(.horizontal)
                     }
                 }
-                .refreshable {
-                    viewModel.fetchRecipes()
-                }
-                
             }
+            .refreshable {
+                viewModel.fetchRecipes()
+            }
+            .navigationTitle("Recipe's")
         }
     }
 }
-//struct ContentView: View {
-//    @EnvironmentObject var viewModel: RecipeViewModel
-//    
-//    var body: some View {
-//        NavigationView {
-//            Group {
-//                if let error = viewModel.error {
-//                    ErrorView(error: error)
-//                } else if viewModel.recipes.isEmpty {
-//                    EmptyStateView()
-//                } else {
-//                    RecipeListView(recipes: viewModel.recipes)
-//                }
-//            }
-//            .navigationTitle("Recipes")
-//            .refreshable {
-//                viewModel.fetchRecipes()
-//            }
-//        }
-//    }
-//}
-//
-//struct ErrorView: View {
-//    let error: String
-//    
-//    var body: some View {
-//        VStack {
-//            Spacer()
-//            Text("Error fetching recipes")
-//                .font(.headline)
-//            Text(error)
-//                .font(.subheadline)
-//                .foregroundColor(.secondary)
-//                .multilineTextAlignment(.center)
-//                .padding()
-//            Spacer()
-//        }
-//    }
-//}
-//
-//struct EmptyStateView: View {
-//    var body: some View {
-//        VStack {
-//            Spacer()
-//            Text("No Recipes available")
-//                .font(.title)
-//            Text("Pull to refresh")
-//                .font(.subheadline)
-//                .foregroundColor(.secondary)
-//            Spacer()
-//        }
-//    }
-//}
-//
-//struct RecipeListView: View {
-//    let recipes: [Recipe]
-//    
-//    var body: some View {
-//        List(recipes) { recipe in
-//            HStack {
-//                KFImage.url(recipe.photoUrlSmall)
-//                    .cancelOnDisappear(true)
-//                    .fade(duration: 0.25)
-//                    .placeholder { _ in
-//                        Image(systemName: "photo")
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fit)
-//                            .frame(width: 50, height: 50)
-//                            .foregroundColor(.gray)
-//                    }
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fill)
-//                    .frame(width: 50, height: 50)
-//                    .cornerRadius(8)
-//                
-//                VStack(alignment: .leading) {
-//                    Text(recipe.name)
-//                        .font(.headline)
-//                    Text(recipe.cuisine)
-//                        .font(.subheadline)
-//                }
-//            }
-//        }
-//    }
-//}
-

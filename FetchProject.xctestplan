@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "F216548F-1CD2-4D23-8594-D60E54DF22A7",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:FetchProject.xcodeproj",
+      "identifier" : "E2E2144B2CB19C0900D466AA",
+      "name" : "FetchProject"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:FetchProject.xcodeproj",
+        "identifier" : "E2E2145C2CB19C0C00D466AA",
+        "name" : "FetchProjectTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "target" : {
+        "containerPath" : "container:FetchProject.xcodeproj",
+        "identifier" : "E2E214662CB19C0C00D466AA",
+        "name" : "FetchProjectUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

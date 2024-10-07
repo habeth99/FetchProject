@@ -35,6 +35,5 @@ struct Recipe: Identifiable, Codable, Equatable {
         photoUrlSmall = try container.decode(URL.self, forKey: .photoUrlSmall)
         sourceUrl = try container.decodeIfPresent(URL.self, forKey: .sourceUrl)
         youtubeUrl = try container.decodeIfPresent(URL.self, forKey: .youtubeUrl)
-        //youtubeUrl = try container.decode(URL.self, forKey: .youtubeUrl)
     }
 }
